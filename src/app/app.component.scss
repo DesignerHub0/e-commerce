@@ -1,0 +1,79 @@
+@import '../styles.scss';
+.mobile-container{
+    max-width: 375px;
+    margin: 0 auto;
+}
+.app-header{
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    justify-content: space-between;
+}
+// stepper css
+::ng-deep.mat-horizontal-stepper-header{
+    padding: 20px 24px 0;
+    flex-wrap: wrap;
+    align-items: center;
+    height: auto;
+    &.mat-step-header{
+        height: auto;
+        padding: 20px 0px 0;
+        &:hover{
+            background: transparent;
+        }
+        .mat-step-icon{
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 12px;
+            transform: translateX(-50%);
+            height: 12px;
+            color: transparent;
+            z-index: 1;
+            background-color: #BFBFBF;
+            &.mat-step-icon-selected{
+                color: transparent;
+                background-color: #874BF9;
+            }
+        }
+    }
+    .mat-step-label{
+        min-width: auto;
+        font-size: 10px;
+    }
+}
+::ng-deep.mat-stepper-horizontal{
+    .mat-horizontal-stepper-header-container{
+        position: relative;
+        align-items: center;
+        max-width: 174px;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+    .mat-stepper-horizontal-line{
+        margin: 0 14px;
+        min-width: 32px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 6px;
+        background-color: #874BF9;
+    }
+}
+.btn_gradient{
+    color: $white;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    min-width: 48px;
+    width: auto;
+    padding: 6px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.back-btn{
+    img{
+        width: 6px;
+    }
+}
