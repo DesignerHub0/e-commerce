@@ -1,15 +1,14 @@
 @import '../styles.scss';
-$gradient-flat : linear-gradient(180deg, #FF3269, #FF794D);
-$gradient-cashback : linear-gradient(259.17deg, #FF3269, #FF794D);
+
 .f_gradient{background: $gradient-flat !important;}
 .mobile-container{
-    max-width: 375px;
+    @include rem-fallback(max-width, 375);
     margin: 0 auto;
 }
 .app-header{
     display: flex;
     align-items: center;
-    padding: 25px;
+    @include rem-fallback(padding, 25);
     justify-content: space-between;
 }
 ::ng-deep.mat-horizontal-content-container{
@@ -17,70 +16,70 @@ $gradient-cashback : linear-gradient(259.17deg, #FF3269, #FF794D);
 }
 // stepper css
 .shope-step{
-    padding: 10px 0 0;
+    @include rem-fallback(padding,10,0,0);
 }
 .has-footer{
-    padding-bottom: 80px;
+    @include rem-fallback(padding-bottom,80);
 }
 ::ng-deep.mat-horizontal-stepper-header{
-    padding: 20px 24px 0;
+    @include rem-fallback(padding,20,24,0);
     flex-wrap: wrap;
     align-items: center;
     height: auto;
     &.mat-step-header{
         height: auto;
-        padding: 20px 0px 0;
+        @include rem-fallback(padding,20,0,0);
         &:hover{
             background: transparent;
         }
         .mat-step-icon{
             position: absolute;
             left: 50%;
-            top: 0;
-            width: 12px;
-            transform: translateX(-50%);
-            height: 12px;
+            @include rem-fallback(top,0);
+            @include rem-fallback(width,12);
+            @include rem-fallback(height,12);
+            @include transformX(-50%);
             color: transparent;
             z-index: 1;
-            background-color: #BFBFBF;
+            background-color: $grey-5;
             &.mat-step-icon-selected{
                 color: transparent;
-                background-color: #874BF9;
+                background-color: $indigo;
             }
         }
     }
     .mat-step-label{
         min-width: auto;
-        font-size: 10px;
+        @include rem-fallback(font-size,10);
     }
 }
 ::ng-deep.mat-stepper-horizontal{
     .mat-horizontal-stepper-header-container{
         position: relative;
         align-items: center;
-        max-width: 174px;
+        @include rem-fallback(max-width,174);
         margin: 0 auto;
         justify-content: space-between;
     }
     .mat-stepper-horizontal-line{
-        margin: 0 14px;
-        min-width: 32px;
+        @include rem-fallback(margin,0,14);
+        @include rem-fallback(min-width,32);
+        @include rem-fallback(left,0);
+        @include rem-fallback(right,0);
+        @include rem-fallback(top,6);
         position: absolute;
-        left: 0;
-        right: 0;
-        top: 6px;
-        background-color: #874BF9;
+        background-color: $indigo;
     }
 }
 
 .btn_gradient{
     color: $white;
-    font-size: 12px;
+    @include rem-fallback(font-size,12);
     font-weight: 700;
     line-height: 1;
-    min-width: 48px;
+    @include rem-fallback(min-width,48);
     width: auto;
-    padding: 6px 0;
+    @include rem-fallback(padding,6,0);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,30 +87,30 @@ $gradient-cashback : linear-gradient(259.17deg, #FF3269, #FF794D);
 }
 .cashback-btn{
     justify-content: flex-start;
-    font-size: 20px;
-    padding: 20px 10px;
-    max-width: 319px;
+    @include rem-fallback(font-size,20);
+    @include rem-fallback(padding,20,10);
+    @include rem-fallback(max-width,319);
     margin: 0 auto;
     width: 100%;
     text-align: left;
-    padding-left: 75px;
-    border-radius: 7px;
+    @include rem-fallback(padding-left,75);
+    @include rem-fallback(border-radius,7);
     position: relative;
     font-family: 'Jost', sans-serif;
     background: $gradient-cashback !important;
     img{
         position: absolute;
-        left: 20px;
-        width: 41px;
+        @include rem-fallback(left,20);
+        @include rem-fallback(width,41);
     }
     span{
         color: $white;
-        font-size: 20px;
+        @include rem-fallback(font-size,20);
         line-height: 1;
         font-weight: 500;
     }
     em{
-        font-size: 12px;
+        @include rem-fallback(font-size,12);
         font-weight: normal;
         font-style: normal;
     }
@@ -121,36 +120,36 @@ $gradient-cashback : linear-gradient(259.17deg, #FF3269, #FF794D);
 }
 .back-btn{
     img{
-        width: 6px;
+        @include rem-fallback(width,6);
     }
 }
 
 // tab css
 ::ng-deep.mat-tab-group{
-    padding-top: 20px;
+    @include rem-fallback(padding-top,20);
     .mat-tab-header{
         border: none;
         .mat-tab-label{
             opacity: 1;
-            padding: 0 22px;
+            @include rem-fallback(padding,0,22);
             position: relative;
             z-index: 1;
-            font-size: 13px;
+            @include rem-fallback(font-size,13);
             line-height: 1;
             font-weight: normal;
-            height: 35px;
+            @include rem-fallback(height,35);
             font-family: 'Jost', sans-serif;
             img{
-                margin-right: 5px;
+                @include rem-fallback(margin-right,5);
             }
             &.mat-tab-label-active{
-                color: #ffffff;
-                border-radius: 40px;
-                background-color: #874BF9;
+                color: $white;
+                @include rem-fallback(border-radius,40);
+                background-color: $indigo;
             }
         }
         .mat-tab-labels{
-            background: #F0F0F0;
+            background: $grey-1;
             border-radius: 55px;
             max-width: max-content;
             justify-content: center;
@@ -158,31 +157,31 @@ $gradient-cashback : linear-gradient(259.17deg, #FF3269, #FF794D);
         }
         .mat-ink-bar{
             height: 100%;
-            top: 0;
+            @include rem-fallback(top,0);
             z-index: 0;
-            border-radius: 40px;
-            background-color: #874BF9;
+            @include rem-fallback(border-radius,40);
+            background-color: $indigo;
             display: none;
         }
     }
     .custom-tab{
-        padding: 20px 0;
+        @include rem-fallback(padding,20,0);
         h2{
             font-family: 'Jost', sans-serif;
             font-weight: 700;
             font-size: 16px !important;
             line-height: 1.3 !important;
-            color: #000000;
+            color: $black;
             padding: 0 0 15px !important;
             text-align: center;
-            border-bottom: 1px solid #EFEFEF;
+            border-bottom: 1px solid $grey-2;
             display: block;
             margin: 0 !important;
         }
     }
 }
 .s_container{
-    max-width: 291px;
+    @include rem-fallback(max-width, 291);
     margin: 0 auto;
 
 }
@@ -191,16 +190,13 @@ $gradient-cashback : linear-gradient(259.17deg, #FF3269, #FF794D);
 }
 ::ng-deep.form-control{
     width: 100%;
-    padding: 10px 0 ;
+    @include rem-fallback(padding, 10, 0);
     position: relative;
     img{
         position: absolute;
-        left: 10px;
+        @include rem-fallback(left, 10);
         top: 50%;
-        transform: translateY(-50%);
-        -webkit-transform: translateY(-50%);
-        -o-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
+        @include transformY(-50%);
     }
     .mat-form-field-underline{
         display: none;
@@ -210,17 +206,17 @@ $gradient-cashback : linear-gradient(259.17deg, #FF3269, #FF794D);
     }
     &.mat-form-field-appearance-fill {
         .mat-form-field-flex{
-            background-color: #ECECEC;
+            background-color: $grey-3;
             border-radius: 50px;
             overflow: hidden;
-            color: #000000;
-            font-size: 12px;
+            color: $black;
+            @include rem-fallback(font-size,12);
             line-height: 1;
             font-family: 'Jost', sans-serif;
             padding-top: 0;
         }
         .mat-form-field-infix{
-            padding: 10px 10px 10px 35px;
+            @include rem-fallback(padding,10,10,10,35);
             border: none;
         }
     }
@@ -230,21 +226,18 @@ $gradient-cashback : linear-gradient(259.17deg, #FF3269, #FF794D);
 ::ng-deep.accordion-tab {
     &.mat-expansion-panel{
         box-shadow: none !important;
-        border-bottom: 1px solid #EFEFEF;
+        border-bottom: 1px solid $grey-2;
         .mat-expansion-panel-header-title{
             justify-content: space-between;
-            font-size: 14px;
-            color: #000000;
+            @include rem-fallback(font-size,14);
+            color: $black;
             line-height: 1.2;
             font-family: 'Jost', sans-serif;
             margin: 0;
             .toggle{
-                transform: rotate(180deg);
-                -webkit-transform: rotate(180deg);
-                -o-transform: rotate(180deg);
-                -ms-transform: rotate(180deg);
-                height: 12px;
-                width: 12px;
+                @include transformrotate(180deg);
+                @include rem-fallback(height,12);
+                @include rem-fallback(width,12);
                 display: inline-block;
                 img{
                     width: 100%;
@@ -255,7 +248,7 @@ $gradient-cashback : linear-gradient(259.17deg, #FF3269, #FF794D);
         .mat-expansion-panel-body{
             p{
                 font-size: 16px !important;
-                color: #000000;
+                color: $black;
                 line-height: 1.4 !important;
                 font-family: 'Jost', sans-serif;
                 margin: 0 !important;
@@ -263,12 +256,9 @@ $gradient-cashback : linear-gradient(259.17deg, #FF3269, #FF794D);
         }
         .mat-expansion-panel-header{
             &.mat-expanded{
-                height: 48px;
+                @include rem-fallback(height,48);
                 .toggle{
-                    transform: rotate(270deg);
-                    -webkit-transform: rotate(270deg);
-                    -o-transform: rotate(270deg);
-                    -ms-transform: rotate(270deg);
+                    @include transformrotate(270deg);
                 }
             }
         }
@@ -277,8 +267,8 @@ $gradient-cashback : linear-gradient(259.17deg, #FF3269, #FF794D);
 
 // product
 .product-items{
-    border-bottom: 1px solid #EFEFEF;
-    padding: 13px 13px 13px 24px;
+    border-bottom: 1px solid $grey-2;
+    @include rem-fallback(padding,13,13,13,24);
     text-align: left;
     display: flex;
     align-items: center;
@@ -290,21 +280,21 @@ $gradient-cashback : linear-gradient(259.17deg, #FF3269, #FF794D);
         padding-bottom: 0 !important;
     }
     span{
-        font-size: 12px;
-        color: #000000;
+        @include rem-fallback(font-size,12);
+        color: $black;
         line-height: 1;
     }
     p{
         font-size: 10px !important;
-        color: #000000;
+        color: $black;
         margin: 0 !important;
         line-height: 1 !important;
     }
     .product-info{
-        width: 46px;
-        height: 46px;
-        background-color: #CCCCCC;
-        border-radius: 5px;
+        @include rem-fallback(width,46);
+        @include rem-fallback(height,46);
+        @include rem-fallback(border-radius,5);
+        background-color: $grey-4;
         position: relative;
         display: inline-flex;
         align-items: center;
@@ -313,62 +303,64 @@ $gradient-cashback : linear-gradient(259.17deg, #FF3269, #FF794D);
 }
 .add-btn{
     position: absolute;
-    bottom: -6px;
-    font-size: 8px;
+    @include rem-fallback(bottom,-6);
+    @include rem-fallback(font-size,8);
     min-height: auto;
     padding: 0 !important;
-    height: 12px;
-    width: 28px;
+    @include rem-fallback(height,12);
+    @include rem-fallback(width,28);
+    @include rem-fallback(border-radius,0);
     line-height: 1;
     min-width: auto;
-    color: #ffffff;
-    border-radius: 0;
-    background-color: #874BF9;
+    color: $white;
+    background-color: $indigo;
 }
 .view-cart{
     position: fixed;
-    padding: 15px;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    @include rem-fallback(padding,15);
+    @include rem-fallback(bottom,0);
+    @include rem-fallback(left,0);
+    @include rem-fallback(right,0);
+    @include rem-fallback(max-width,375);
     z-index: 2;
+    margin: 0 auto;
 }
 // view cart btn
 .btn-viewcart{
-    color: #ffffff;
+    color: $white;
     font-family: 'Jost', sans-serif;
     width: 100%;
     line-height: 1;
     min-width: auto;
     min-height: auto;
     text-align: left;
-    padding: 8px 20px;
+    @include rem-fallback(padding, 8,20);
     ::ng-deep.mat-button-wrapper{
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
     span{
-        font-size: 16px;
+        @include rem-fallback(font-size,16);
         line-height: 1;
         font-family: 'Jost', sans-serif;
     }
     em{
-        font-size: 13px;
+        @include rem-fallback(font-size,13);
         line-height: 1.3;
         font-weight: normal;
         font-style: normal;
         font-family: 'Jost', sans-serif;
         &.pre-text{
-            font-size: 10px;
+            @include rem-fallback(font-size,10);
         }
     }
     img{
-        margin-right: 10px;
+        @include rem-fallback(margin-right,10);
     }
     .right-col{
         span{
-            font-size: 18px;
+            @include rem-fallback(font-size,18);
         }
     }
 }

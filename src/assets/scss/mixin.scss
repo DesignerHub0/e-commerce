@@ -1,0 +1,148 @@
+//Tranform
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin translate($x, $y) {
+    @include transform(translate($x, $y));
+}
+
+@mixin rotate($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+
+@mixin transformrotate($rotate) {
+    -moz-transform: rotate($rotate);
+    -o-transform: rotate($rotate);
+    -ms-transform: rotate($rotate);
+    -webkit-transform: rotate($rotate);
+    transform: rotate($rotate);
+}
+
+@mixin transformY($transforms) {
+    -moz-transform: translateY($transforms);
+    -o-transform: translateY($transforms);
+    -ms-transform: translateY($transforms);
+    -webkit-transform: translateY($transforms);
+    transform: translateY($transforms);
+}
+
+@mixin transformX($transforms) {
+    -moz-transform: translateX($transforms);
+    -o-transform: translateX($transforms);
+    -ms-transform: translateX($transforms);
+    -webkit-transform: translateX($transforms);
+    transform: translateX($transforms);
+}
+
+@mixin transformZ($transforms) {
+    -moz-transform: translateZ($transforms);
+    -o-transform: translateZ($transforms);
+    -ms-transform: translateZ($transforms);
+    -webkit-transform: translateZ($transforms);
+    transform: translateZ($transforms);
+}
+
+@mixin scale($transforms) {
+    -moz-transform: scale($transforms);
+    -o-transform: scale($transforms);
+    -ms-transform: scale($transforms);
+    -webkit-transform: scale($transforms);
+    transform: scale($transforms);
+}
+
+@mixin rotate($transforms) {
+    -moz-transform: rotate($transforms);
+    -o-transform: rotate($transforms);
+    -ms-transform: rotate($transforms);
+    -webkit-transform: rotate($transforms);
+    transform: rotate($transforms);
+}
+
+@mixin transition($transition) {
+    transition: $transition;
+    -o-transition: $transition;
+    -ms-transition: $transition;
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+
+//placeholder
+@mixin placeholder {
+    &.placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+//Border Radius
+@mixin border-radius($radius) {
+    border-top-right-radius: $radius;
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+}
+
+// CONVERT TO REM
+@function strip-unit($num) {
+    @return $num / 10;
+}
+
+@mixin rem-fallback($property, $values...) {
+    $max: length($values);
+    $pxValues: '';
+    $remValues: '';
+    @for $i from 1 through $max {
+        $value: strip-unit(nth($values, $i));
+        $pxValues: #{$pxValues + $value*16}px;
+        @if $i < $max {
+            $pxValues: #{$pxValues + " "};
+        }
+    }
+    @for $i from 1 through $max {
+        $value: strip-unit(nth($values, $i));
+        $remValues: #{$remValues + $value}rem;
+        @if $i < $max {
+            $remValues: #{$remValues + " "};
+        }
+    }
+    //#{$property}: $pxValues; 
+    #{$property}: $remValues;
+}
+
+@mixin css3-prefix($property, $value) {
+    -webkit-#{$property}: #{$value};
+    -moz-#{$property}: #{$value};
+    -ms-#{$property}: #{$value};
+    -o-#{$property}: #{$value};
+    #{$property}: #{$value};
+}
+
+/* Set background */
+
+@mixin background-style($position, $repeat, $size) {
+    background-position: $position;
+    background-repeat: $repeat;
+    background-size: $size;
+}
+
+@mixin flexbox {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+
