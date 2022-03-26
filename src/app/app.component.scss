@@ -1,4 +1,7 @@
 @import '../styles.scss';
+$gradient-flat : linear-gradient(180deg, #FF3269, #FF794D);
+$gradient-cashback : linear-gradient(259.17deg, #FF3269, #FF794D);
+.f_gradient{background: $gradient-flat !important;}
 .mobile-container{
     max-width: 375px;
     margin: 0 auto;
@@ -9,7 +12,16 @@
     padding: 25px;
     justify-content: space-between;
 }
+::ng-deep.mat-horizontal-content-container{
+    padding: 0 14px 24px 14px !important;
+}
 // stepper css
+.shope-step{
+    padding: 10px 0 0;
+}
+.has-footer{
+    padding-bottom: 80px;
+}
 ::ng-deep.mat-horizontal-stepper-header{
     padding: 20px 24px 0;
     flex-wrap: wrap;
@@ -60,6 +72,7 @@
         background-color: #874BF9;
     }
 }
+
 .btn_gradient{
     color: $white;
     font-size: 12px;
@@ -71,9 +84,291 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Jost', sans-serif;
+}
+.cashback-btn{
+    justify-content: flex-start;
+    font-size: 20px;
+    padding: 20px 10px;
+    max-width: 319px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: left;
+    padding-left: 75px;
+    border-radius: 7px;
+    position: relative;
+    font-family: 'Jost', sans-serif;
+    background: $gradient-cashback !important;
+    img{
+        position: absolute;
+        left: 20px;
+        width: 41px;
+    }
+    span{
+        color: $white;
+        font-size: 20px;
+        line-height: 1;
+        font-weight: 500;
+    }
+    em{
+        font-size: 12px;
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+.d_block {
+    display: block;
 }
 .back-btn{
     img{
         width: 6px;
+    }
+}
+
+// tab css
+::ng-deep.mat-tab-group{
+    padding-top: 20px;
+    .mat-tab-header{
+        border: none;
+        .mat-tab-label{
+            opacity: 1;
+            padding: 0 22px;
+            position: relative;
+            z-index: 1;
+            font-size: 13px;
+            line-height: 1;
+            font-weight: normal;
+            height: 35px;
+            font-family: 'Jost', sans-serif;
+            img{
+                margin-right: 5px;
+            }
+            &.mat-tab-label-active{
+                color: #ffffff;
+                border-radius: 40px;
+                background-color: #874BF9;
+            }
+        }
+        .mat-tab-labels{
+            background: #F0F0F0;
+            border-radius: 55px;
+            max-width: max-content;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .mat-ink-bar{
+            height: 100%;
+            top: 0;
+            z-index: 0;
+            border-radius: 40px;
+            background-color: #874BF9;
+            display: none;
+        }
+    }
+    .custom-tab{
+        padding: 20px 0;
+        h2{
+            font-family: 'Jost', sans-serif;
+            font-weight: 700;
+            font-size: 16px !important;
+            line-height: 1.3 !important;
+            color: #000000;
+            padding: 0 0 15px !important;
+            text-align: center;
+            border-bottom: 1px solid #EFEFEF;
+            display: block;
+            margin: 0 !important;
+        }
+    }
+}
+.s_container{
+    max-width: 291px;
+    margin: 0 auto;
+
+}
+.search-form{
+    text-align: center;
+}
+::ng-deep.form-control{
+    width: 100%;
+    padding: 10px 0 ;
+    position: relative;
+    img{
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+    }
+    .mat-form-field-underline{
+        display: none;
+    }
+    .mat-form-field-wrapper{
+        padding: 0;
+    }
+    &.mat-form-field-appearance-fill {
+        .mat-form-field-flex{
+            background-color: #ECECEC;
+            border-radius: 50px;
+            overflow: hidden;
+            color: #000000;
+            font-size: 12px;
+            line-height: 1;
+            font-family: 'Jost', sans-serif;
+            padding-top: 0;
+        }
+        .mat-form-field-infix{
+            padding: 10px 10px 10px 35px;
+            border: none;
+        }
+    }
+}
+
+// accordion
+::ng-deep.accordion-tab {
+    &.mat-expansion-panel{
+        box-shadow: none !important;
+        border-bottom: 1px solid #EFEFEF;
+        .mat-expansion-panel-header-title{
+            justify-content: space-between;
+            font-size: 14px;
+            color: #000000;
+            line-height: 1.2;
+            font-family: 'Jost', sans-serif;
+            margin: 0;
+            .toggle{
+                transform: rotate(180deg);
+                -webkit-transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                height: 12px;
+                width: 12px;
+                display: inline-block;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .mat-expansion-panel-body{
+            p{
+                font-size: 16px !important;
+                color: #000000;
+                line-height: 1.4 !important;
+                font-family: 'Jost', sans-serif;
+                margin: 0 !important;
+            }
+        }
+        .mat-expansion-panel-header{
+            &.mat-expanded{
+                height: 48px;
+                .toggle{
+                    transform: rotate(270deg);
+                    -webkit-transform: rotate(270deg);
+                    -o-transform: rotate(270deg);
+                    -ms-transform: rotate(270deg);
+                }
+            }
+        }
+    }
+}
+
+// product
+.product-items{
+    border-bottom: 1px solid #EFEFEF;
+    padding: 13px 13px 13px 24px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Jost', sans-serif;
+    h2{
+        text-align: left;
+        border: none;
+        padding-bottom: 0 !important;
+    }
+    span{
+        font-size: 12px;
+        color: #000000;
+        line-height: 1;
+    }
+    p{
+        font-size: 10px !important;
+        color: #000000;
+        margin: 0 !important;
+        line-height: 1 !important;
+    }
+    .product-info{
+        width: 46px;
+        height: 46px;
+        background-color: #CCCCCC;
+        border-radius: 5px;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.add-btn{
+    position: absolute;
+    bottom: -6px;
+    font-size: 8px;
+    min-height: auto;
+    padding: 0 !important;
+    height: 12px;
+    width: 28px;
+    line-height: 1;
+    min-width: auto;
+    color: #ffffff;
+    border-radius: 0;
+    background-color: #874BF9;
+}
+.view-cart{
+    position: fixed;
+    padding: 15px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+// view cart btn
+.btn-viewcart{
+    color: #ffffff;
+    font-family: 'Jost', sans-serif;
+    width: 100%;
+    line-height: 1;
+    min-width: auto;
+    min-height: auto;
+    text-align: left;
+    padding: 8px 20px;
+    ::ng-deep.mat-button-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    span{
+        font-size: 16px;
+        line-height: 1;
+        font-family: 'Jost', sans-serif;
+    }
+    em{
+        font-size: 13px;
+        line-height: 1.3;
+        font-weight: normal;
+        font-style: normal;
+        font-family: 'Jost', sans-serif;
+        &.pre-text{
+            font-size: 10px;
+        }
+    }
+    img{
+        margin-right: 10px;
+    }
+    .right-col{
+        span{
+            font-size: 18px;
+        }
     }
 }

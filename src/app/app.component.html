@@ -2,17 +2,98 @@
   
 </style>
 
-<div class="mobile-container" role="main">
+<div class="mobile-container has-footer" role="main">
   <div class="app-header">
     <a href="#" class="back-btn">
       <img src="../assets/images/back-arrow.svg" alt="">
     </a>
-    <button mat-button class="b_gradient btn_gradient">$ 100</button>
+    <button mat-button class="f_gradient btn_gradient">$ 100</button>
   </div>
   <mat-stepper>
     <mat-step>
       <ng-template matStepLabel>Shop</ng-template>
-      
+      <div class="shope-step">
+        <button mat-button class="btn_gradient cashback-btn">
+          <img src="../assets/images/ic-rs.svg" alt="">
+          <span>
+            <em class="d_block">Get</em>
+            200 Cashback
+            <em>Min order 1000</em>
+          </span>
+        </button>
+        <mat-tab-group>
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <img src="../assets/images/ic-store.svg" alt="">
+              Visit Store
+            </ng-template>
+            <div class="custom-tab">
+              <h2>Visit Store & Redeem on Purchase</h2>
+              <form class="search-form">
+                <mat-form-field class="form-control s_container" appearance="fill">
+                  <img src="../assets/images/ic-search.svg" alt="">
+                  <!-- <mat-label>Search</mat-label> -->
+                  <input matInput class="form-control" placeholder="Search">
+                </mat-form-field>
+              </form>
+              <div>
+                <mat-expansion-panel hideToggle class="accordion-tab">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      About the Store
+                      <i  class="toggle"><img src="../assets/images/back-arrow.svg" alt="">
+                      </i>
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet in nam libero harum alias odit corrupti, id dolorum iure, possimus doloribus illo facere temporibus nesciunt nemo omnis. Maxime, quis obcaecati.</p>
+                </mat-expansion-panel>
+                <mat-expansion-panel hideToggle class="accordion-tab">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Highlights/User Tips
+                      <i  class="toggle"><img src="../assets/images/back-arrow.svg" alt="">
+                      </i>
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet in nam libero harum alias odit corrupti, id dolorum iure, possimus doloribus illo facere temporibus nesciunt nemo omnis. Maxime, quis obcaecati.</p>
+                </mat-expansion-panel>
+              </div>
+              <div class="product-wrapper">
+                <div class="product-items">
+                  <div class="left-col">
+                    <h2>Product Name</h2>
+                    <span>Price: $12</span>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                  </div>
+                  <div class="product-info">
+                    <img src="../assets/images/product-img.png" alt="">
+                    <button mat-button class="add-btn">Add</button>
+                  </div>
+                </div>
+                <div class="product-items">
+                  <div class="left-col">
+                    <h2>Product Name</h2>
+                    <span>Price: $12</span>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                  </div>
+                  <div class="product-info">
+                    <img src="../assets/images/product-img.png" alt="">
+                    <button mat-button class="add-btn">Add</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-tab>
+        
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <img src="../assets/images/ic-delivery.svg" alt="">
+              Delivery
+            </ng-template>
+            Content 2
+          </mat-tab>
+        </mat-tab-group>
+      </div>
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Redeem</ng-template>
@@ -21,6 +102,27 @@
       <ng-template matStepLabel>Earn</ng-template>
     </mat-step>
   </mat-stepper>
+  <ngu-carousel [inputs]="carouselTileConfig">
+    <ngu-item NguCarouselItem>
+      test
+    </ngu-item>
+    <ngu-item NguCarouselItem>
+      test
+    </ngu-item>
+    <ngu-item NguCarouselItem>
+      test
+    </ngu-item>
+  </ngu-carousel>
+
+  <div class="view-cart">
+    <button mat-button class="f_gradient btn-viewcart">
+      <span class="left-col">
+        <em class="d_block">3 ITEMS</em>
+        $100 <em class="pre-text">Plus Taxes</em>
+      </span>
+      <span class="right-col"><img src="../assets/images/ic-store.svg" alt="">View Cart</span>
+    </button>
+  </div>
 </div>
 
 
